@@ -41,7 +41,7 @@ app.post('/api/employee', async (req, res, next) => {
       VALUES($1, $2)
       RETURNING *
     `
-         const response = await client.query(SQL, [req.body.name, req.body.employee_id])
+         const response = await client.query(SQL, [req.body.name, req.body.department_id])
          res.send(response.rows[0])
     } catch (ex) {
         next(ex)}
